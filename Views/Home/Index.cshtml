@@ -300,7 +300,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link"href="@Url.Action("Index", "Home")">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
@@ -313,7 +313,7 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">All Employees</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="@Url.Action("AllEmployee", "Employee")">All Employees</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Holidays</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Leaves</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Attendance</a></li>
@@ -322,7 +322,6 @@
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Timesheet</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Shift & Schedule</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Overtime</a></li>
-
                             </ul>
                         </div>
                     </li>
@@ -1026,13 +1025,30 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p class="card-title">Advanced Table</p>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="table-responsive">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-title">Advanced Table</p>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                                <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="example" class="display expandable-table dataTable no-footer" style="width: 100%;" role="grid">
+                                                            <thead>
+                                                                <tr role="row">
+                                                                    <th class="select-checkbox sorting_disabled" rowspan="1" colspan="1" aria-label="Quote#" style="width: 89px;">Quote#</th>
+                                                                    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product: activate to sort column descending" style="width: 106px;">Product</th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Business type: activate to sort column ascending" style="width: 169px;">Business type</th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Policy holder: activate to sort column ascending" style="width: 160px;">Policy holder</th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Premium: activate to sort column ascending" style="width: 117px;">Premium</th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 92px;">Status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody><tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">Loading...</td></tr></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div>
                                             </div>
                                         </div>
                                     </div>

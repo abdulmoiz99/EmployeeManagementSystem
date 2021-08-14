@@ -28,7 +28,7 @@ namespace EmployeeManagementSystem.Controllers
             db.Employees.Add(employee);
             db.SaveChanges();
 
-            return View("New");
+            return View("AllEmployee");
         }
         public ActionResult AllEmployee()
         {
