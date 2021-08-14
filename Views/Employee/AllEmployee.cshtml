@@ -1,0 +1,116 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Employee>
+
+@{
+    ViewBag.Title = "AllEmployee";
+    Layout = "~/Views/Shared/_theme.cshtml";
+
+}
+
+
+<div class="card">
+
+    <div class="card-body">
+        <h4 class="card-title">
+            Employee
+            <button type="button" class="btn btn-inverse-primary btn-fw float-right">Add Employee</button>
+        </h4>
+        @*<p class="card-description">
+                Add class <code>.table-striped</code>
+            </p>*@
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>PhoneNo</th>
+                        <th>JoiningDate</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var employee in Model)
+                    {
+                        <tr>
+                            <td>@employee.FirstName</td>
+                            <td>@employee.LastName</td>
+                            <td>@employee.PhoneNo</td>
+                            <td>@employee.JoiningDate</td>
+                            <td>@employee.Department.Name</td>
+                            <td>@employee.Designation.Name</td>
+                            @{
+                                if (employee.Active)
+                                {
+                                    <td><label class="badge badge-success">Active</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="badge badge-warning">In Active</label></td>
+
+                                }
+                            }
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = employee.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id = employee.ID })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<h2>AllEmployee</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>-->
+@*@foreach (var item in Model) {
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.PhoneNo)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.JoiningDate)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Active)
+    </td>
+    <td>
+    @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+    @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+    @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+    </td>
+    </tr>
+    }*@
+
+<!--</table>-->
