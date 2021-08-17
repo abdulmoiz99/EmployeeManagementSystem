@@ -28,7 +28,12 @@ namespace EmployeeManagementSystem.Controllers
             db.Employees.Add(employee);
             db.SaveChanges();
 
-            return View("AllEmployee");
+
+            //To show all employees
+            var model = new List<Employee>();
+            model = db.Employees.ToList();
+
+            return View("AllEmployee", model);
         }
         public ActionResult AllEmployee()
         {
